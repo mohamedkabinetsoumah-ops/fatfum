@@ -1,0 +1,49 @@
+/* Catalogue en ligne — noir et or, pensé d'abord pour le téléphone. */
+
+:root { --noir: #16130F; --or: #C8A04A; --or-clair: #E9D39A; --fond: #FAF6EE; --blanc: #fff; --texte: #221D16; --gris: #6F675B; --bord: #E4DCCB; }
+* { box-sizing: border-box; }
+body { margin: 0; font: 16px/1.45 "Segoe UI", system-ui, -apple-system, Roboto, sans-serif; color: var(--texte); background: var(--fond); }
+[hidden] { display: none !important; }
+button, input { font: inherit; color: inherit; }
+
+.tete { background: var(--noir); color: #fff; display: flex; align-items: center; gap: 14px; padding: 16px; }
+.tete img { width: 72px; height: 72px; border-radius: 14px; object-fit: cover; flex: none; }
+.tete h1 { margin: 0; font-size: 22px; letter-spacing: 1px; color: var(--or-clair); text-transform: uppercase; }
+.tete p { margin: 2px 0 0; font-size: 14px; color: #CFC5B0; font-style: italic; }
+
+main { max-width: 1100px; margin: 0 auto; padding: 14px 12px 30px; }
+.outils { position: sticky; top: 0; background: var(--fond); padding: 6px 0 8px; z-index: 5; }
+#recherche { width: 100%; min-height: 48px; padding: 10px 14px; border: 1px solid #CFC5B0; border-radius: 12px; background: var(--blanc); }
+.puces { display: flex; gap: 6px; overflow-x: auto; padding: 10px 0 2px; }
+.puce { border: 1px solid var(--bord); background: var(--blanc); border-radius: 99px; padding: 7px 14px; cursor: pointer; font-weight: 600; font-size: 14px; white-space: nowrap; }
+.puce.actif { background: var(--noir); color: var(--or-clair); border-color: var(--noir); }
+.etat { color: var(--gris); text-align: center; padding: 30px 10px; }
+
+.grille { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; }
+.carte { display: flex; flex-direction: column; gap: 5px; text-align: left; padding: 8px 8px 12px; border: 1px solid var(--bord); border-radius: 14px; background: var(--blanc); cursor: pointer; }
+.carte:hover { border-color: var(--or); box-shadow: 0 4px 14px rgba(22, 19, 15, .1); }
+.photo { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 9px; }
+.sans-photo { display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #2A241B, var(--noir)); color: var(--or); font-size: 44px; font-weight: 700; }
+.nom { font-weight: 600; line-height: 1.25; flex: 1; }
+.prix { font-weight: 700; color: #7A5A12; font-variant-numeric: tabular-nums; margin: 0; }
+.etiquette { align-self: flex-start; font-size: 12px; font-weight: 700; padding: 2px 9px; border-radius: 99px; background: #EEE7D8; color: #5A5144; }
+.etiquette.ok { background: #E3F3E8; color: #1E6B3A; } .etiquette.non { background: #FBEFD5; color: #8A5200; }
+
+.bouton { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 10px 18px; border-radius: 12px; background: #1F8F4E; color: #fff; font-weight: 700; text-decoration: none; }
+.bouton.large { width: 100%; margin-top: 14px; }
+.bouton.clair { margin-top: 10px; }
+:focus-visible { outline: 3px solid var(--or); outline-offset: 2px; }
+
+.voile { position: fixed; inset: 0; background: rgba(22, 19, 15, .7); display: flex; align-items: center; justify-content: center; padding: 14px; z-index: 20; overflow-y: auto; }
+.fiche { position: relative; background: var(--blanc); border-radius: 16px; width: 100%; max-width: 460px; overflow: hidden; }
+.fiche .grande { width: 100%; aspect-ratio: 1; object-fit: cover; display: flex; }
+.fiche-texte { padding: 14px 16px 18px; display: flex; flex-direction: column; gap: 6px; }
+.fiche h2 { margin: 0; font-size: 20px; }
+.fiche .prix { font-size: 20px; }
+.categorie { margin: 0; font-size: 13px; color: var(--gris); text-transform: uppercase; letter-spacing: .5px; }
+.croix { position: absolute; top: 8px; right: 8px; width: 40px; height: 40px; border-radius: 50%; border: 0; background: rgba(22, 19, 15, .75); color: #fff; font-size: 26px; line-height: 1; cursor: pointer; }
+
+.pied { background: var(--noir); color: #CFC5B0; padding: 22px 16px 28px; display: flex; flex-direction: column; align-items: center; gap: 4px; text-align: center; font-size: 14px; }
+.pied strong { color: var(--or-clair); font-size: 16px; letter-spacing: 1px; text-transform: uppercase; }
+
+@media (min-width: 700px) { .grille { grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 14px; } .tete { padding: 22px max(16px, calc(50vw - 540px)); } }

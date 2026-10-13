@@ -1,19 +1,37 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>FATFUM Business — Catalogue</title>
-<style>
-  body { margin: 0; min-height: 100vh; display: flex; align-items: center; justify-content: center; background: #16130F; color: #E9D39A; font: 18px/1.5 "Segoe UI", system-ui, sans-serif; text-align: center; padding: 24px; }
-  h1 { letter-spacing: 3px; text-transform: uppercase; margin: 0 0 8px; }
-  p { color: #CFC5B0; margin: 0; }
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#16130F">
+  <title>FATFUM Business — Catalogue</title>
+  <meta name="description" content="Votre satisfaction est ma priorité !">
+  <meta property="og:title" content="FATFUM Business — Catalogue">
+  <meta property="og:description" content="Votre satisfaction est ma priorité !">
+  <meta property="og:image" content="https://mohamedkabinetsoumah-ops.github.io/fatfum/logo.png">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="logo.png">
+  <link rel="stylesheet" href="catalogue.css">
 </head>
 <body>
-<main>
-  <h1>FATFUM Business</h1>
-  <p>Notre catalogue sera bientôt en ligne.</p>
-</main>
+  <header class="tete">
+    <img id="logo" src="logo.png" alt="">
+    <div>
+      <h1>FATFUM Business</h1>
+      <p id="slogan">Votre satisfaction est ma priorité !</p>
+    </div>
+  </header>
+  <main>
+    <div class="outils">
+      <input id="recherche" type="search" placeholder="Chercher un article…" aria-label="Chercher un article">
+      <div id="categories" class="puces"></div>
+    </div>
+    <p id="etat" class="etat">Chargement du catalogue…</p>
+    <div id="grille" class="grille"></div>
+  </main>
+  <footer id="pied" class="pied"></footer>
+  <div id="fiche" class="voile" hidden></div>
+  <noscript><p class="etat">Ce catalogue a besoin de JavaScript : activez-le dans votre navigateur.</p></noscript>
+  <script src="catalogue.js"></script>
 </body>
 </html>
